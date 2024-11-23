@@ -1,0 +1,9 @@
+- Use Next.js 15 App Router.
+- use Shadcn Ui for the UI.
+- use TypeScript for the code.
+- Use app directory for routing and use outside the app directory for others.
+- Use Drizzle ORM for database operations.
+- Use SQLite for the database.
+- Use LibSQL for the database.
+- use the best Next.js 15 practices.
+- Use SWR from vercel for client side data fetching and realtime updates.
