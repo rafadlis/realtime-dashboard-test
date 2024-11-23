@@ -14,6 +14,8 @@ import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "./ui/button";
+import { insertTodo } from "@/lib/new";
+import { toast } from "sonner";
 
 export function TodoForm() {
   const form = useForm<z.infer<typeof insertTodoSchema>>({
@@ -24,7 +26,13 @@ export function TodoForm() {
   });
 
   const onSubmit = (values: z.infer<typeof insertTodoSchema>) => {
-    console.log(values);
+    insertTodo(values.title).then((res) => {
+      if (res) {
+        toast.success("Todo inserted successfully");
+      } else {
+        toast.error("Failed to insert todo");
+      }
+    });
   };
 
   return (

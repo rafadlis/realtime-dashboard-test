@@ -1,11 +1,9 @@
-import { TodoForm } from "@/components/todo-form";
-import { TodoList } from "@/components/todo-list";
+import { TodoComponent } from "@/components/todo-component";
 
 export default function Home() {
   return (
     <div className="max-w-screen-md">
-      <TodoForm />
-      <TodoList />
+      <TodoComponent />
     </div>
   );
 }

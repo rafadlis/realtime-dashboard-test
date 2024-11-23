@@ -1,15 +1,11 @@
-"use client";
+import { todos } from "@/drizzle/schema";
 
-import useSWR from "swr";
-import { getTodos } from "@/lib/get";
-
-export function TodoList() {
-  const { data } = useSWR("/api/todos", getTodos);
+export function TodoList({ data }: { data: (typeof todos.$inferSelect)[] }) {
   return (
-    <main>
+    <ul>
       {data?.map((todo) => (
-        <div key={todo.id}>{todo.title}</div>
+        <li key={todo.id}>{todo.title}</li>
       ))}
-    </main>
+    </ul>
   );
 }
